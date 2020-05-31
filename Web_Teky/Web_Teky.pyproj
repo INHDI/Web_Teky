@@ -190,6 +190,7 @@
     <Content Include="home\static\home\js\aos.js" />
     <Content Include="home\static\home\js\bootstrap-datepicker.js" />
     <Content Include="home\static\home\js\bootstrap.min.js" />
+    <Content Include="home\static\home\js\cart.js" />
     <Content Include="home\static\home\js\google-map.js" />
     <Content Include="home\static\home\js\jquery-3.2.1.min.js" />
     <Content Include="home\static\home\js\jquery-migrate-3.0.1.min.js" />

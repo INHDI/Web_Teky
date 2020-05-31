@@ -14,8 +14,8 @@ class Customer(models.Model):
 
 
 class LoaiSPModel(models.Model):
-    Ma_loai = models.CharField(max_length=10, verbose_name='Mã Loại Sản Phẩn', blank=True,)
-    Loai_sp = models.CharField(max_length=50, verbose_name='Tên Loại Sản Phẩn', blank=True,)
+    Ma_loai = models.CharField(max_length=10, verbose_name='Mã Loại Sản Phẩn', blank=True, )
+    Loai_sp = models.CharField(max_length=50, verbose_name='Tên Loại Sản Phẩn', blank=True, )
     Mo_ta = models.TextField(verbose_name='Mô Tả')
 
     def __str__(self):
@@ -23,14 +23,14 @@ class LoaiSPModel(models.Model):
 
 
 class SanPhamModel(models.Model):
-    Loai_sp = models.ForeignKey(LoaiSPModel,on_delete=models.CASCADE,default=1,verbose_name='Loại Sản Phẩm')
-    Ma_sp = models.CharField( max_length=10, verbose_name='Mã Sản Phẩm')
+    Loai_sp = models.ForeignKey(LoaiSPModel, on_delete=models.CASCADE, default=1, verbose_name='Loại Sản Phẩm')
+    Ma_sp = models.CharField(max_length=10, verbose_name='Mã Sản Phẩm')
     Ten_sp = models.CharField(max_length=50, verbose_name='Tên Sản Phẩm', blank=True)
     Mo_ta = models.TextField(verbose_name='Mô Tả')
     Gia_nhap = models.IntegerField(verbose_name='Giá Nhập', blank=True, default=0)
-    Sale = models.PositiveIntegerField( blank=True, default=0)
+    Sale = models.PositiveIntegerField(blank=True, default=0)
     Gia_ban = models.IntegerField(verbose_name='Giá Bán', blank=True, default=200000)
-    Gia_sale = models.IntegerField(verbose_name='Giá Sale',  default=150000)
+    Gia_sale = models.IntegerField(verbose_name='Giá Sale', default=150000)
     Hang_ton = models.IntegerField(verbose_name='Hàng Tồn', default=100)
     Anh = models.ImageField(upload_to='static\home\images')
 
@@ -74,7 +74,7 @@ class Order(models.Model):
     @property
     def get_cart_items(self):
         order_items = self.orderitem_set.all()
-        total =sum(item.quantity for item in order_items)
+        total = sum(item.quantity for item in order_items)
         return total
 
 

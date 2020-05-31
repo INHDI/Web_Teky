@@ -9,6 +9,7 @@ urlpatterns = [
     path('index/chitiet/<int:id>/', views.chitiet, name='chitiet'),
     path('index/danhmuc/<int:id>/', views.loaisp,),
     path('cart/',views.cart, name='cart'),
+    path('update_item/',views.updateItem,name="update_item")
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
